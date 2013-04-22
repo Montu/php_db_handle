@@ -1,5 +1,5 @@
 <?php
-require_once('MysqliDb.php');
+require_once('mysql_db_handle.php');
 
 $db = new MysqliDb('localhost', 'root', 'root', 'db');
 

@@ -2,7 +2,7 @@ To utilize this class, first import Mysqldbi.php into your project, and require 
 
 <pre>
 <code>
-require_once('Mysqlidb.php');
+require_once('mysql_db_handle.php');
 </code>
 </pre>
 
@@ -10,7 +10,7 @@ After that, create a new instance of the class.
 
 <pre>
 <code>
-$db = new Mysqlidb('host', 'username', 'password', 'databaseName');
+$db = new DbHandle('host', 'username', 'password', 'databaseName');
 </code>
 </pre>
 
