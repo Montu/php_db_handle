@@ -1,21 +1,42 @@
 <?php
 /**
- * MysqliDb Class
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
- * @category  Database Access
- * @package   MysqliDb
- * @author    Jeffery Way <jeffrey@jeffrey-way.com>
- * @author    Josh Campbell <jcampbell@ajillion.com>
- * @copyright Copyright (c) 2010
- * @license   http://opensource.org/licenses/gpl-3.0.html GNU Public License
- * @version   1.1
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * PHP Database Handle
+ * @category Database Access
+ * @package php_db_handle
+ * @author Akshay Bhardwaj <akshay@jubi.in>
+ * @copyright Copyright (c) 2013
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU Public License
+ * @details This project aims at developing an robust database connection handler
+ * 			which can be used to work robustly and securely with MySQL database to
+ *			to be use on jubi.in
+ * @version 1.0
+ * 
+ * This class project is based on MysqliDb project orignally authored by 
+ * Jeffery Way <jeffrey@jeffrey-way.com> and Josh Campbell<jcampbell@ajillion.com>.
+ * Jeffery Way and Josh Campbell hold copyright for MysqliDb project and had released
+ * source code under GNU GPLv3.0 license. for details about DbHandle project visit 
+ * https://github.com/ajillion/PHP-MySQLi-Database-Class
+ * 
  **/
-class MysqliDb
+class DbHandle
 {
     /**
      * Static instance of self
      *
-     * @var MysqliDb
+     * @var DbHandle
      */
     protected static $_instance;
     /**
@@ -76,7 +97,7 @@ class MysqliDb
      * instantiated object from within another class.
      * Inheriting this class would require reloading connection info.
      *
-     * @uses $db = MySqliDb::getInstance();
+     * @uses $db = DbHandle::getInstance();
      *
      * @return object Returns the current instance.
      */
@@ -222,12 +243,12 @@ class MysqliDb
     /**
      * This method allows you to specify multipl (method chaining optional) WHERE statements for SQL queries.
      *
-     * @uses $MySqliDb->where('id', 7)->where('title', 'MyTitle');
+     * @uses $DbHandle->where('id', 7)->where('title', 'MyTitle');
      *
      * @param string $whereProp  The name of the database field.
      * @param mixed  $whereValue The value of the database field.
      *
-     * @return MysqliDb
+     * @return DbHandle
      */
     public function where($whereProp, $whereValue)
     {
