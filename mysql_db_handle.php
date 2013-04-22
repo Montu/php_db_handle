@@ -88,7 +88,6 @@ class DbHandle
             or die('There was a problem connecting to the database');
 
         $this->_mysqli->set_charset('utf8');
-
         self::$_instance = $this;
     }
 
@@ -105,6 +104,34 @@ class DbHandle
     {
         return self::$_instance;
     }
+	
+	/**
+	 * Method to increase robustness and security of transactions.
+	 * Function call disables autocommit by the current thread.
+	 */
+	 
+	public function secure()
+	{
+		self::$_instance->autocommit(FALSE);
+	}
+	
+	/**
+	 * Method to commit the executed query/queires
+	 */
+	public function commit()
+	{
+		self::$_instance->commit();
+	}
+	
+	/**
+	 * Method to rollback queries
+	 */
+	 
+	public function rollback()
+	{
+		self::$_instance->rollback();
+	}
+	
 
     /**
      * Reset states after an execution
